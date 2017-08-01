@@ -1,0 +1,23 @@
+- alias: Turn on bath fan by light
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.master_bathroom_light
+      from: 'off'
+      to: 'on'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.master_bathroom_fan_switch
+
+
+- alias: Turn off bath fan by timeout
+  trigger:
+    - platform: state
+      entity_id: switch.master_bathroom_fan_switch
+      to: 'on'
+      for: 
+        minutes: 20
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.master_bathroom_fan_switch

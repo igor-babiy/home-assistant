@@ -1,0 +1,35 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: !secret unit_system
+  time_zone: !secret time_zone
+  customize: !include customizations.yaml
+
+frontend:
+
+config:
+
+http:
+  api_password: !secret http_password
+
+updater:
+  include_used_components: true
+
+discovery:
+conversation:
+history:
+logbook:
+sun:
+
+mqtt: !include mqtt.yaml
+switch: !include switches.yaml
+sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
+
+tts:
+  platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml

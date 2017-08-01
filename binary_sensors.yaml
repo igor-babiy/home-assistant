@@ -1,0 +1,5 @@
+# MQTT Sensors
+- platform: mqtt
+  state_topic: 'devices/246121ef/bathroom-fan/light'
+  name: 'Master Bathroom Light'
+

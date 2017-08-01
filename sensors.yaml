@@ -1,0 +1,20 @@
+# Yahoo wheather
+- platform: yweather
+  name: 'Weather'
+  monitored_conditions:
+    - weather_current
+    - wind_speed
+    - humidity
+    - temperature
+
+
+# MQTT Sensors
+- platform: mqtt
+  state_topic: 'devices/246121ef/bathroom-fan/temperature'
+  name: 'Master Bathroom Temperature'
+  unit_of_measurement: '°C'
+- platform: mqtt
+  state_topic: 'devices/246121ef/bathroom-fan/humidity'
+  name: 'Master Bathroom Humidity'
+  unit_of_measurement: '%'
+

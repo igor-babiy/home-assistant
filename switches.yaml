@@ -1,0 +1,8 @@
+- platform: mqtt
+  name: "Master Bathroom Fan Switch"
+  command_topic: "devices/246121ef/bathroom-fan/on/set"
+  state_topic: "devices/246121ef/bathroom-fan/relay"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: true
