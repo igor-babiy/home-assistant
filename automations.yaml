@@ -16,7 +16,53 @@
       entity_id: switch.master_bathroom_fan_switch
       to: 'on'
       for: 
-        minutes: 20
+        hours: 1
+        minutes: 10
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.master_bathroom_fan_switch
+
+- alias: Turn off bath fan by timeout and humidity after no light there
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.master_bathroom_light
+      to: 'off'
+      for:
+        minutes: 16
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'switch.master_bathroom_fan_switch'
+        state: 'on'
+        for:
+          minutes: 15
+      - condition: numeric_state
+        entity_id: 'sensor.master_bathroom_humidity'
+        below: 60
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.master_bathroom_fan_switch
+
+
+- alias: Turn off bath fan by humidity and no light there
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.master_bathroom_humidity
+      below: 60
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'switch.master_bathroom_fan_switch'
+        state: 'on'
+        for:
+          minutes: 15
+      - condition: state
+        entity_id: 'binary_sensor.master_bathroom_light'
+        state: 'off'
   action:
     - service: switch.turn_off
       data:
