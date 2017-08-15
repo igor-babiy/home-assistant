@@ -2,6 +2,25 @@ sensor.master_bathroom_humidity:
   icon: mdi:water-percent
   friendly_name: Humidity
 
+sensor.outdoor_dew_point:
+  icon: mdi:water
+  friendly_name: 'Dew Point'
+
+sensor.outdoor_humidity:
+  icon: mdi:water-percent
+  friendly_name: Humidity
+
+sensor.outdoor_temperature:
+  friendly_name: Temperature
+
+sensor.outdoor_pressure:
+  icon: mdi:chart-line
+  friendly_name: Pressure
+
+switch.outdoor_light:
+  icon: mdi:ceiling-light
+  friendly_name: Lights
+
 binary_sensor.master_bathroom_light:
   icon: mdi:lightbulb
   friendly_name: Light

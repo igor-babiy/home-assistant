@@ -1,11 +1,25 @@
-Bathroom:
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.bathroom
+    - group.outdoor
+bathroom:
+  name: Master Bathroom
   entities:
     - sensor.master_bathroom_humidity
     - sensor.master_bathroom_temperature
     - binary_sensor.master_bathroom_light
     - switch.master_bathroom_fan_switch
-
-Outdoor:
+#outdoor:
+#  name: Outdoor
+#  icon: mdi:weather-partlycloudy
+#  view: yes
+#  entities:
+#    - group.outdoor_status
+outdoor:
+  name: Outdoor
+  view: no
   entities:
     - sensor.outdoor_temperature
     - sensor.outdoor_humidity

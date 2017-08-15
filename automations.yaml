@@ -67,3 +67,44 @@
     - service: switch.turn_off
       data:
         entity_id: switch.master_bathroom_fan_switch
+
+
+- alias: 'Turn ON outdoor light (Evening)'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-00:30:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.outdoor_light_switch
+
+- alias: 'Turn OFF outdoor light (Evening)'
+  trigger:
+    - platform: time
+      at: '23:50:00'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.outdoor_light_switch      
+
+#- alias: 'Turn ON outdoor light (Morning)'
+#  trigger:
+#    - platform: sun
+#      event: sunrise
+#      offset: '-00:30:00'
+#  action:
+#    - service: switch.turn_on
+#      data:
+#        entity_id: switch.outdoor_light_switch
+#
+#- alias: 'Turn OFF outdoor light (Morning)'
+#  trigger:
+#    - platform: sun
+#      event: sunrise
+#      offset: '01:00:00'
+#  action:
+#    - service: switch.turn_off
+#      data:
+#        entity_id: switch.outdoor_light_switch      
+
