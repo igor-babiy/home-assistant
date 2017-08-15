@@ -7,7 +7,8 @@ Bathroom:
 
 Outdoor:
   entities:
-    - sensor.weather_current
-    - sensor.weather_humidity
-    - sensor.weather_temperature
-    - sensor.weather_wind_speed
+    - sensor.outdoor_temperature
+    - sensor.outdoor_humidity
+    - sensor.outdoor_pressure
+    - sensor.outdoor_dew_point
+    - switch.outdoor_light_switch

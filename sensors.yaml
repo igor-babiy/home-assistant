@@ -1,13 +1,3 @@
-# Yahoo wheather
-- platform: yweather
-  name: 'Weather'
-  monitored_conditions:
-    - weather_current
-    - wind_speed
-    - humidity
-    - temperature
-
-
 # MQTT Sensors
 - platform: mqtt
   state_topic: 'devices/246121ef/bathroom-fan/temperature'
@@ -18,3 +8,21 @@
   name: 'Master Bathroom Humidity'
   unit_of_measurement: '%'
 
+
+# Outdoor sensors (mqtt)
+- platform: mqtt
+  state_topic: 'devices/ab8a62e0/outdoor-light-switch/temperature'
+  name: 'Outdoor Temperature'
+  unit_of_measurement: '°C'
+- platform: mqtt
+  state_topic: 'devices/ab8a62e0/outdoor-light-switch/humidity'
+  name: 'Outdoor Humidity'
+  unit_of_measurement: '%'
+- platform: mqtt
+  state_topic: 'devices/ab8a62e0/outdoor-light-switch/pressure'
+  name: 'Outdoor Pressure'
+  unit_of_measurement: 'hPa'
+- platform: mqtt
+  state_topic: 'devices/ab8a62e0/outdoor-light-switch/dew_point'
+  name: 'Outdoor Dew Point'
+  unit_of_measurement: '°C'

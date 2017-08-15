@@ -6,3 +6,14 @@
   payload_off: "OFF"
   optimistic: false
   retain: true
+
+
+- platform: mqtt
+  name: "Outdoor Light Switch"
+  command_topic: "devices/ab8a62e0/outdoor-light-switch/on/set"
+  state_topic: "devices/ab8a62e0/outdoor-light-switch/relay"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  retain: true
+
