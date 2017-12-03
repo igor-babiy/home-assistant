@@ -107,3 +107,16 @@
 #      data:
 #        entity_id: switch.outdoor_light_switch      
 
+
+
+- alias: Let a dog bark on long press
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.wall_switch_158d0001834835
+      click_type: single
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.gateway_light_34ce008dc4c6

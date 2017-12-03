@@ -11,13 +11,24 @@ frontend:
 
 config:
 
+logger:
+  default: debug
+
+#emulated_hue:
+#  listen_port: 80
+
 http:
   api_password: !secret http_password
 
-# media_player:
-#   - platform: cast
-#    name: google_home_living_room
-#     host: 192.168.0.106
+media_player:
+  - platform: cast
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: 34CE008DC4C6
+      key: D835A86AD9954A0A
+ 
 
 updater:
   include_used_components: true
@@ -38,3 +49,5 @@ tts:
 
 group: !include groups.yaml
 automation: !include automations.yaml
+
+script: !include_dir_named scripts

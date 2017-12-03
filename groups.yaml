@@ -4,12 +4,16 @@ default_view:
   entities:
     - group.bathroom
     - group.outdoor
-#    - media_player.google_home_living_room
+    - media_player.living_room
+    - script.tts_example
+    - light.gateway_light_34ce008dc4c6
+    #- binary_sensor.wall_switch_158d0001834835
 test_tab:
   view: yes
   entities:
     - group.bathroom
-    - group.outdoor    
+    - group.outdoor
+    - switch.wall_switch_ln_158d00019f9e4b    
 bathroom:
   name: Master Bathroom
   view: no
@@ -18,6 +22,7 @@ bathroom:
     - sensor.master_bathroom_temperature
     - binary_sensor.master_bathroom_light
     - switch.master_bathroom_fan_switch
+    - switch.wall_switch_ln_158d00019f9e4b
 #outdoor:
 #  name: Outdoor
 #  icon: mdi:weather-partlycloudy
